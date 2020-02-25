@@ -1,9 +1,13 @@
 package io.jza.jartadministrationback.controller;
 
-import io.jza.jartadministrationback.dto.in.AdministratorLogininInDTO;
-import io.jza.jartadministrationback.dto.in.AdministratorUpdateProfileInDTO;
+import io.jza.jartadministrationback.dto.in.*;
 import io.jza.jartadministrationback.dto.out.AdministratorGetProfileOutDTO;
+import io.jza.jartadministrationback.dto.out.AdministratorListOutDTO;
+import io.jza.jartadministrationback.dto.out.AdministratorShowOutDTO;
+import io.jza.jartadministrationback.dto.out.PageOutDTO;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/administrator")
@@ -21,6 +25,45 @@ public class AdministratorController {
 
     @PostMapping("/updateProdfile")
     public void updateProdfile(@RequestBody AdministratorUpdateProfileInDTO administratorUpdateProfileInDTO){
+
+    }
+    @GetMapping("/getPwdResetCode")
+    public String getPwdResetCode(@RequestParam String email){
+        return null;
+    }
+
+    @PostMapping("/resetPwd")
+    public void resetPwd(@RequestBody AdministratorResetPwdInDTO administratorResetPwdInDTO){
+
+    }
+
+    @GetMapping("/getList")
+    public PageOutDTO<AdministratorListOutDTO> getList(@RequestParam Integer pageNum){
+        return null;
+    }
+
+    @GetMapping("/getById")
+    public AdministratorShowOutDTO getById(@RequestParam Integer administratorId){
+        return null;
+    }
+
+    @PostMapping("/create")
+    public Integer create(@RequestBody AdministratorCreateInDTO administratorCreateInDTO){
+        return null;
+    }
+
+    @PostMapping("/update")
+    public void update(@RequestBody AdministratorUpdateInDTO administratorUpdateInDTO){
+
+    }
+
+    @PostMapping("/delete")
+    public void delete(@RequestBody Integer adminstratorId){
+
+    }
+
+    @PostMapping("/batchDelete")
+    public void batchDelete(@RequestBody List<Integer> administratorIds){
 
     }
 }
