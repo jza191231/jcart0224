@@ -1,9 +1,12 @@
 package io.jza.jcartstoreback.controller;
 
+import at.favre.lib.crypto.bcrypt.BCrypt;
+import io.jza.jcartstoreback.constant.ClientExceptionConstant;
 import io.jza.jcartstoreback.dto.in.*;
 import io.jza.jcartstoreback.dto.out.CustomerGetProfileOutDTO;
 import io.jza.jcartstoreback.dto.out.CustomerLoginOutDTO;
 import io.jza.jcartstoreback.exception.ClientException;
+import io.jza.jcartstoreback.po.Customer;
 import io.jza.jcartstoreback.service.CustomerService;
 import io.jza.jcartstoreback.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +25,25 @@ public class CustomerController {
 
     @PostMapping("/register")
     public Integer register(@RequestBody CustomerRegisterInDTO customerRegisterInDTO){
-
-        return null;
+        Integer customerId = customerService.register(customerRegisterInDTO);
+        return customerId;
     }
 
     @GetMapping("/login")
     public CustomerLoginOutDTO login(CustomerLoginInDTO customerLoginInDTO) throws ClientException {
-      return null;
+        Customer customer = customerService.getByUsername(customerLoginInDTO.getUsername());
+        if (customer == null){
+            throw new ClientException(ClientExceptionConstant.CUSTOMER_USERNAME_NOT_EXIST_ERRCODE, ClientExceptionConstant.CUSTOMER_USERNAME_NOT_EXIST_ERRMSG);
+        }
+        String encPwdDB = customer.getEncryptedPassword();
+        BCrypt.Result result = BCrypt.verifyer().verify(customerLoginInDTO.getPassword().toCharArray(), encPwdDB);
+
+        if (result.verified) {
+            CustomerLoginOutDTO customerLoginOutDTO = jwtUtil.issueToken(customer);
+            return customerLoginOutDTO;
+        }else {
+            throw new ClientException(ClientExceptionConstant.CUSTOMER_PASSWORD_INVALID_ERRCODE, ClientExceptionConstant.CUSTOMER_PASSWORD_INVALID_ERRMSG);
+        }
     }
 
     @GetMapping("/getProfile")
