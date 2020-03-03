@@ -41,12 +41,21 @@ public class AdministratorController {
     }
 
     @GetMapping("/getProfile")
-    public AdministratorGetProfileOutDTO getProfile(Integer adminstratorId){
-       return null;
+    public AdministratorGetProfileOutDTO getProfile(@RequestAttribute Integer adminstratorId){
+        return null;
     }
 
     @PostMapping("/updateProdfile")
-    public void updateProdfile(@RequestBody AdministratorUpdateProfileInDTO administratorUpdateProfileInDTO){
+    public void updateProdfile(@RequestBody AdministratorUpdateProfileInDTO administratorUpdateProfileInDTO,
+                               @RequestAttribute Integer administratorId
+                               ){
+
+    }
+
+    @PostMapping("/changePwd")
+    public void changePwd(@RequestBody AdministractorChangePwdInDTO administractorChangePwdInDTO,
+                          @RequestAttribute Integer administratorId
+                          ){
 
     }
     @GetMapping("/getPwdResetCode")
