@@ -16,15 +16,22 @@ public class AddressServiceImpl implements AddressService {
     private AddressMapper addressMapper;
 
     @Override
-    public List<Address> getByCustomerId(Integer customerId) {
+    public Address getById(Integer addressId) {
+        Address address = addressMapper.selectByPrimaryKey(addressId);
+        return address;
+    }
 
-        return null;
+    @Override
+    public List<Address> getByCustomerId(Integer customerId) {
+        List<Address> addresses = addressMapper.selectByCustomerId(customerId);
+        return addresses;
     }
 
     @Override
     public Integer create(Address address) {
-
-        return null;
+        addressMapper.insertSelective(address);
+        Integer addressId = address.getAddressId();
+        return addressId;
     }
 
     @Override

@@ -105,4 +105,5 @@
     from jcart_address
     where customer_id = #{customerId}
   </select>
+
 </mapper>

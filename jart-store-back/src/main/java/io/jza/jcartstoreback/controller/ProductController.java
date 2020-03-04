@@ -5,6 +5,7 @@ import io.jza.jcartstoreback.dto.in.ProductSearchInDTO;
 import io.jza.jcartstoreback.dto.out.PageOutDTO;
 import io.jza.jcartstoreback.dto.out.ProductListOutDTO;
 import io.jza.jcartstoreback.dto.out.ProductShowOutDTO;
+import io.jza.jcartstoreback.po.Product;
 import io.jza.jcartstoreback.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,9 +32,9 @@ public class ProductController {
     }
 
     @GetMapping("/getById")
-    public ProductShowOutDTO getById(@RequestParam Integer productId){
-        ProductShowOutDTO productShowOutDTO = productService.getById(productId);
-        return productShowOutDTO;
+    public Product getById(@RequestParam Integer productId){
+        Product product = productService.getById(productId);
+        return product;
     }
 
 }

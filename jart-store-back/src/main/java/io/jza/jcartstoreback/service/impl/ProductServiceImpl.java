@@ -26,7 +26,13 @@ public class ProductServiceImpl implements ProductService {
     private ProductDetailMapper productDetailMapper;
 
     @Override
-    public ProductShowOutDTO getById(Integer productId) {
+    public Product getById(Integer productId) {
+        Product product = productMapper.selectByPrimaryKey(productId);
+        return product;
+    }
+
+    @Override
+    public ProductShowOutDTO getShowById(Integer productId) {
         Product product = productMapper.selectByPrimaryKey(productId);
         ProductDetail productDetail = productDetailMapper.selectByPrimaryKey(productId);
 
@@ -47,6 +53,7 @@ public class ProductServiceImpl implements ProductService {
 
         return productShowOutDTO;
     }
+
 
     @Override
     public Page<ProductListOutDTO> search(Integer pageNum) {

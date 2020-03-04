@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface AddressService {
 
+    public Address getById(Integer addressId);
+
     List<Address> getByCustomerId(Integer customerId);
 
     Integer create(Address address);
