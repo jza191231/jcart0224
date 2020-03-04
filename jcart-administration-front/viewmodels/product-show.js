@@ -10,17 +10,17 @@ var app = new Vue({
         stockQuantity: '',
         mainPicUrl: '',
         otherPicUrls: [],
-        quantity: 1,
-        myShoppingCart: []
+        quantity:1,
+        myShoppingCart:[]
     },
-    computed: {
-        otherPicUrlsJson() {
+    computed:{
+        otherPicUrlsJson(){
             return this.otherPicUrls.toString();
         }
     },
-    mounted() {
+    mounted(){
         console.log('view mounted');
-
+        
         var myShoppingCartJson = localStorage['myShoppingCartJson'];
         this.myShoppingCart = myShoppingCartJson ? JSON.parse(myShoppingCartJson) : [];
 
@@ -33,34 +33,20 @@ var app = new Vue({
 
         this.getProductById();
 
-
     },
     methods: {
-        handleAddToCartClick() {
-            console.log('add to cart click');
-
-            var myShoppingCartJson = localStorage['myShoppingCartJson'];
-            this.myShoppingCart = myShoppingCartJson ? JSON.parse(myShoppingCartJson) : [];
-
-            var cartProduct = this.myShoppingCart.find(p => p.productId === this.productId);
-            if (cartProduct) {
-                console.log('cart product exist');
-                var originQuantity = parseInt(cartProduct.quantity);
-                var addQuantity = parseInt(this.quantity);
-                cartProduct.quantity = originQuantity + addQuantity;
-            } else {
-                cartProduct = {
-                    productId: this.productId,
-                    productCode: this.productCode,
-                    productName: this.productName,
-                    mainPicUrl: this.mainPicUrl,
-                    unitPrice: this.price,
-                    discount: this.discount,
-                    quantity: this.quantity
-                };
-                this.myShoppingCart.push(cartProduct);
-            }
-
+        handleAddToCartClick(){
+            console.log("add to cart click");
+            var newProduct = {
+                productId: this.productId,
+                productCode: this.productCode,
+                productName: this.productName,
+                mainPicUrl: this.mainPicUrl,
+                unitPrice: this.price,
+                quantity: this.quantity,
+            };
+            newProduct.totalPrice = this.price * this.quantity;
+            this.myShoppingCart.push(newProduct);
             localStorage['myShoppingCartJson'] = JSON.stringify(this.myShoppingCart);
             this.$message.success('添加购物车成功');
         },

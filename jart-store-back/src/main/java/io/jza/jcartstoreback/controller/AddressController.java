@@ -33,7 +33,7 @@ public class AddressController {
             addressListOutDTO.setContent(address.getContent());
             return addressListOutDTO;
         }).collect(Collectors.toList());
-        return null;
+        return addressListOutDTOS;
     }
 
     @PostMapping("/create")
