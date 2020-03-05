@@ -5,6 +5,9 @@ import com.github.pagehelper.PageHelper;
 import io.jza.jcartadministrationback.dao.OrderDetailMapper;
 import io.jza.jcartadministrationback.dao.OrderMapper;
 import io.jza.jcartadministrationback.dto.out.OrderListOutDTO;
+import io.jza.jcartadministrationback.dto.out.OrderShowOutDTO;
+import io.jza.jcartadministrationback.po.Order;
+import io.jza.jcartadministrationback.po.OrderDetail;
 import io.jza.jcartadministrationback.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,4 +26,27 @@ public class OrderServiceImpl implements OrderService {
         Page<OrderListOutDTO> page = orderMapper.search();
         return page;
     }
+
+    @Override
+    public OrderShowOutDTO getById(Long orderId) {
+        Order order = orderMapper.selectByPrimaryKey(orderId);
+        OrderDetail orderDetail = orderDetailMapper.selectByPrimaryKey(orderId);
+        OrderShowOutDTO orderShowOutDTO = new OrderShowOutDTO();
+        orderShowOutDTO.setOrderId(orderId);
+        orderShowOutDTO.setStatus(order.getStatus());
+        orderShowOutDTO.setTotalPrice(order.getTotalPrice());
+        orderShowOutDTO.setRewordPoints(order.getRewordPoints());
+        orderShowOutDTO.setCreateTimestamp(order.getCreateTime().getTime());
+        orderShowOutDTO.setUpdateTimestamp(order.getUpdateTime().getTime());
+
+        orderShowOutDTO.setShipMethod(orderDetail.getShipMethod());
+        orderShowOutDTO.setShipAddress(orderDetail.getShipAddress());
+        orderShowOutDTO.setShipPrice(orderDetail.getShipPrice());
+        orderShowOutDTO.setPayMethod(orderDetail.getPayMethod());
+        orderShowOutDTO.setInvoiceAddress(orderDetail.getInvoiceAddress());
+        orderShowOutDTO.setInvoicePrice(orderDetail.getInvoicePrice());
+        orderShowOutDTO.setComment(orderDetail.getComment());
+        return null;
+    }
+
 }
