@@ -5,7 +5,7 @@ import java.util.Date;
 public class OrderHistory {
     private Long orderHistoryId;
 
-    private Integer orderId;
+    private Long orderId;
 
     private Date time;
 
@@ -19,44 +19,44 @@ public class OrderHistory {
         return orderHistoryId;
     }
 
-    public void setOrderHistoryId(Long orderHistoryId) {
-        this.orderHistoryId = orderHistoryId;
-    }
-
-    public Integer getOrderId() {
+    public Long getOrderId() {
         return orderId;
-    }
-
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
     }
 
     public Date getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
-        this.time = time;
-    }
-
     public Byte getOrderStatus() {
         return orderStatus;
-    }
-
-    public void setOrderStatus(Byte orderStatus) {
-        this.orderStatus = orderStatus;
     }
 
     public String getComment() {
         return comment;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment == null ? null : comment.trim();
-    }
-
     public Boolean getCustomerNotified() {
         return customerNotified;
+    }
+
+    public void setOrderHistoryId(Long orderHistoryId) {
+        this.orderHistoryId = orderHistoryId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
+
+    public void setOrderStatus(Byte orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public void setCustomerNotified(Boolean customerNotified) {
