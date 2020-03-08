@@ -1,6 +1,7 @@
 package io.jza.jcartstoreback.dao;
 
 import io.jza.jcartstoreback.po.OrderHistory;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -20,4 +21,5 @@ public interface OrderHistoryMapper {
     int updateByPrimaryKey(OrderHistory record);
 
     List<OrderHistory> selectByOrderId(Long orderId);
+
 }
