@@ -5,6 +5,7 @@ public class ReturnHistoryCreateInDTO {
     private Byte returnStatus;
     private Boolean customerNotifeid;
     private String comment;
+    private Boolean customerNotified;
 
     public Integer getReturnId() {
         return returnId;
@@ -36,5 +37,13 @@ public class ReturnHistoryCreateInDTO {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public Boolean getCustomerNotified() {
+        return customerNotified;
+    }
+
+    public void setCustomerNotified(Boolean customerNotified) {
+        this.customerNotified = customerNotified;
     }
 }

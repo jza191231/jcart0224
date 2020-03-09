@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a23e57c6-213f-4123-8864-c24832dcdac1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/jart-administration-back/src/main/java/io/jza/jcartadministrationback/service/ReturnHistoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jart-administration-back/src/main/java/io/jza/jcartadministrationback/service/impl/ReturnHistoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jart-administration-back/src/main/java/io/jza/jcartadministrationback/controller/ReturnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/jart-administration-back/src/main/java/io/jza/jcartadministrationback/controller/ReturnController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jart-administration-back/src/main/java/io/jza/jcartadministrationback/controller/ReturnHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/jart-administration-back/src/main/java/io/jza/jcartadministrationback/controller/ReturnHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jart-administration-back/src/main/java/io/jza/jcartadministrationback/dao/ReturnHistoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/jart-administration-back/src/main/java/io/jza/jcartadministrationback/dao/ReturnHistoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jart-administration-back/src/main/java/io/jza/jcartadministrationback/dto/in/ReturnHistoryCreateInDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/jart-administration-back/src/main/java/io/jza/jcartadministrationback/dto/in/ReturnHistoryCreateInDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jart-administration-back/src/main/java/io/jza/jcartadministrationback/dto/out/ReturnHistoryListOutDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/jart-administration-back/src/main/java/io/jza/jcartadministrationback/dto/out/ReturnHistoryListOutDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jart-administration-back/src/main/java/io/jza/jcartadministrationback/service/ReturnService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jart-administration-back/src/main/java/io/jza/jcartadministrationback/service/ReturnService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jart-administration-back/src/main/java/io/jza/jcartadministrationback/service/impl/ReturnServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jart-administration-back/src/main/java/io/jza/jcartadministrationback/service/impl/ReturnServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jart-administration-back/src/main/resources/io/jza/jcartadministrationback/dao/ReturnHistoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jart-administration-back/src/main/resources/io/jza/jcartadministrationback/dao/ReturnHistoryMapper.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\maven-3.6.1\mvn-repository" />
+        <option name="mavenHome" value="D:/maven-3.6.1/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="D:\maven-3.6.1\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YsBmFYHN4Nrc4MpmEUWqSskyQ1" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a23e57c6-213f-4123-8864-c24832dcdac1" name="Default Changelist" comment="" />
+      <created>1583721578667</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583721578667</updated>
+      <workItem from="1583721579815" duration="12000" />
+    </task>
+    <servers />
+  </component>
+</project>
