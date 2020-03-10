@@ -190,6 +190,12 @@
       <if test="stockQuantity != null">
         AND stock_quantity &lt;= #{stockQuantity}
       </if>
+      <if test="price != null">
+        AND price = #{price}
+      </if>
+      <if test="productName != null and productName != ''">
+        AND product_name like concat('%',#{productName},'%')
+      </if>
     </where>
   </select>
 

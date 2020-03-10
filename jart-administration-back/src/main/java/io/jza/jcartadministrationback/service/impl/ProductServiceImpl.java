@@ -16,6 +16,7 @@ import io.jza.jcartadministrationback.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -92,12 +93,14 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Page<ProductListOutDTO> search(ProductSearchInDTO productSearchInDTO,
-                                          Integer pageNum) {
+                                          @RequestParam(required = false,defaultValue = "1") Integer pageNum) {
         PageHelper.startPage(pageNum, 10);
         Page<ProductListOutDTO> page = productMapper.search(
                 productSearchInDTO.getProductCode(),
                 productSearchInDTO.getStatus(),
-                productSearchInDTO.getStockQuantity()
+                productSearchInDTO.getStockQuantity(),
+                productSearchInDTO.getPrice(),
+                productSearchInDTO.getProductName()
         );
         return page;
     }
