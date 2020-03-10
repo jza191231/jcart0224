@@ -25,8 +25,8 @@ public class ReturnController {
 
     @GetMapping("/search")
     public PageOutDTO<ReturnListOutDTO> search(ReturnSearchInDTO returnSearchInDTO,
-                                               @RequestParam Integer pageNum){
-        Page<Return> page = returnService.search(pageNum);
+                                               @RequestParam(required = false ,defaultValue = "1") Integer pageNum){
+        Page<Return> page = returnService.search(returnSearchInDTO,pageNum);
         List<ReturnListOutDTO> returnListOutDTOS = page.stream().map(aReturn -> {
             ReturnListOutDTO returnListOutDTO = new ReturnListOutDTO();
             returnListOutDTO.setReturnId(aReturn.getReturnId());

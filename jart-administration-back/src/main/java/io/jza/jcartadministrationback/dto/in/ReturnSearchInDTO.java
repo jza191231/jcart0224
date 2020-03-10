@@ -1,18 +1,20 @@
 package io.jza.jcartadministrationback.dto.in;
 
 public class ReturnSearchInDTO {
-    private Integer returnId;
+    private Long returnId;
     private Long orderId;
     private String customerName;
     private String productCode;
     private String productName;
     private Byte status;
+    private Long startTimestamp;
+    private Long endTimestamp;
 
-    public Integer getReturnId() {
+    public Long getReturnId() {
         return returnId;
     }
 
-    public void setReturnId(Integer returnId) {
+    public void setReturnId(Long returnId) {
         this.returnId = returnId;
     }
 
@@ -54,5 +56,21 @@ public class ReturnSearchInDTO {
 
     public void setStatus(Byte status) {
         this.status = status;
+    }
+
+    public Long getStartTimestamp() {
+        return startTimestamp;
+    }
+
+    public Long getEndTimestamp() {
+        return endTimestamp;
+    }
+
+    public void setStartTimestamp(Long startTimestamp) {
+        this.startTimestamp = startTimestamp;
+    }
+
+    public void setEndTimestamp(Long endTimestamp) {
+        this.endTimestamp = endTimestamp;
     }
 }
