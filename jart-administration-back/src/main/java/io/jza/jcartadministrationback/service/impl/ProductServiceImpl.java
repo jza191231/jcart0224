@@ -6,6 +6,7 @@ import com.github.pagehelper.PageHelper;
 import io.jza.jcartadministrationback.dao.ProductDetailMapper;
 import io.jza.jcartadministrationback.dao.ProductMapper;
 import io.jza.jcartadministrationback.dto.in.ProductCreateInDTO;
+import io.jza.jcartadministrationback.dto.in.ProductSearchInDTO;
 import io.jza.jcartadministrationback.dto.in.ProductUpdateInDTO;
 import io.jza.jcartadministrationback.dto.out.ProductListOutDTO;
 import io.jza.jcartadministrationback.dto.out.ProductShowOutDTO;
@@ -54,7 +55,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     @Transactional
     public void update(ProductUpdateInDTO productUpdateInDTO) {
-         Product product = new Product();
+        Product product = new Product();
         product.setProductId(productUpdateInDTO.getProductId());
         product.setProductName(productUpdateInDTO.getProductName());
         product.setPrice(productUpdateInDTO.getPrice());
@@ -85,14 +86,19 @@ public class ProductServiceImpl implements ProductService {
     @Override
     @Transactional
     public void batchDelete(List<Integer> productIds) {
-         productMapper.batchDelete(productIds);
-         productDetailMapper.batchDelete(productIds);
+        productMapper.batchDelete(productIds);
+        productDetailMapper.batchDelete(productIds);
     }
 
     @Override
-    public Page<ProductListOutDTO> search(Integer pageNum) {
-        PageHelper.startPage(pageNum,10);
-        Page<ProductListOutDTO> page = productMapper.search();
+    public Page<ProductListOutDTO> search(ProductSearchInDTO productSearchInDTO,
+                                          Integer pageNum) {
+        PageHelper.startPage(pageNum, 10);
+        Page<ProductListOutDTO> page = productMapper.search(
+                productSearchInDTO.getProductCode(),
+                productSearchInDTO.getStatus(),
+                productSearchInDTO.getStockQuantity()
+        );
         return page;
     }
 
