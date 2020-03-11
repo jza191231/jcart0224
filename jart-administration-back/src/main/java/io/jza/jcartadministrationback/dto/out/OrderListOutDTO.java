@@ -34,11 +34,11 @@ public class OrderListOutDTO {
         this.customerName = customerName;
     }
 
-    public Double totalPrice() {
+    public Double getTotalPrice() {
         return totalPrice;
     }
 
-    public void totalPrice(Double totalPirce) {
+    public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;
     }
 
