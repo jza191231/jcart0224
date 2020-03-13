@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/oauth_client2/oauth_client2.iml" filepath="$PROJECT_DIR$/oauth_client2/oauth_client2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth_clinet1/oauth_clinet1.iml" filepath="$PROJECT_DIR$/oauth_clinet1/oauth_clinet1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth_server/oauth_server.iml" filepath="$PROJECT_DIR$/oauth_server/oauth_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_sso_parent.iml" filepath="$PROJECT_DIR$/spring_sso_parent.iml" />
+    </modules>
+  </component>
+</project>

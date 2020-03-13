@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="oauth_clinet1:war">
+    <output-path>$PROJECT_DIR$/oauth_clinet1/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>oauth_clinet1</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="oauth_clinet1-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="oauth_clinet1:war exploded" />
+    </root>
+  </artifact>
+</component>

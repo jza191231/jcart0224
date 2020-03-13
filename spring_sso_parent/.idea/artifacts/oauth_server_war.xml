@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="oauth_server:war">
+    <output-path>$PROJECT_DIR$/oauth_server/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>oauth_server</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="oauth_server-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="oauth_server:war exploded" />
+    </root>
+  </artifact>
+</component>
